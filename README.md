@@ -1,3 +1,9 @@
+# hanzoai/act
+
+Hanzo Git Actions job runtime image (ghcr.io/hanzoai/runner-ubuntu) — GH-Actions ubuntu-compatible, built FROM ghcr.io/hanzoai/ubuntu. Replaces third-party catthehacker images.
+
+---
+
 # act
 
 The workflow **model** and **expression parser** used by Hanzo Git Actions.
