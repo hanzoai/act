@@ -26,9 +26,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get update && apt-get install -y --no-install-recommends docker-ce-cli docker-buildx-plugin docker-compose-plugin \
     && mkdir -p /opt/hostedtoolcache \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
-# Go 1.26.4 (matches our repos' go-version) into the tool cache + PATH.
+# Go 1.26.8 (matches our repos' go-version) into the tool cache + PATH.
 RUN ARCH=$(dpkg --print-architecture) && case "$ARCH" in amd64) GOARCH=amd64;; arm64) GOARCH=arm64;; esac \
-    && curl -fsSL "https://go.dev/dl/go1.26.4.linux-${GOARCH}.tar.gz" | tar -C /usr/local -xz \
+    && curl -fsSL "https://go.dev/dl/go1.26.8.linux-${GOARCH}.tar.gz" | tar -C /usr/local -xz \
     && ln -sf /usr/local/go/bin/go /usr/local/bin/go && ln -sf /usr/local/go/bin/gofmt /usr/local/bin/gofmt
 ENV PATH=/usr/local/go/bin:/opt/hostedtoolcache:$PATH
 CMD ["/bin/bash"]
